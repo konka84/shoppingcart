@@ -50,7 +50,7 @@ export default function Products() {
                         .filter(product => product.title.toLowerCase().includes(searchText.toLowerCase()))
                         .map((product) => {
                             return (
-                                <div key={product.id} className="2xl:w-1/5 xl:w-1/4 md:w-1/3 w-full py-2 px-4 lg:px-10 xl:py-4 xl:px-6 ">
+                                <div key={product.id} className="2xl:w-1/4 xl:w-1/3 md:w-1/2 w-full py-2 px-4 lg:px-10 xl:py-4 xl:px-6 ">
                                     <ProdCard product={product} />
                                 </div>
                             )
@@ -59,12 +59,12 @@ export default function Products() {
             </div>
         </div>
     ) : (
-        <div className='h-screen flex bg-gradient-to-r from-blue-100 to-green-100'>
+        <div className='h-screen flex bg-gradient-to-r from-purple-100 to-purple-500'>
             <div className='m-auto my-80 '>
                 <div className='flex items-center justify-center '>
-                    <div className='w-8 h-10 bg-blue-400 rounded-full animate-bounce'></div>
-                    <div className='w-8 h-10 bg-blue-400 rounded-full animate-bounce'></div>
-                    <div className='w-8 h-10 bg-blue-400 rounded-full animate-bounce'></div>
+                    <div className='w-8 h-10 bg-purple-600 rounded-full animate-bounce'></div>
+                    <div className='w-8 h-10 bg-purple-600 rounded-full animate-bounce'></div>
+                    <div className='w-8 h-10 bg-purple-600 rounded-full animate-bounce'></div>
                 </div>
             </div>
         </div>

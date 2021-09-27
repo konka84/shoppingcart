@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import axiosClient from "../api/client";
+import axiosData from "../api/datafetch";
 
 export const ShopContext = React.createContext();
 export const ModalContext = React.createContext();
@@ -12,7 +12,7 @@ export default function ShoppingContext({ children }) {
     
     function setAllProducts() {
         if ((!localStorage.getItem("Products"))||(!localStorage.getItem("Categories"))) {
-            axiosClient()
+            axiosData()
             setCartProducts({})
         }
     }
