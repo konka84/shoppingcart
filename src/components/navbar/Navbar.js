@@ -3,7 +3,8 @@ import { Link, useHistory } from 'react-router-dom'
 import { ModalContext, ShopContext } from '../../contexts/ShoppingContext';
 
 
-function Navbar() {
+
+export default function Navbar() {
     const {cartProducts} = useContext(ShopContext);
     const { setCartVisible } = useContext(ModalContext);
     const history = useHistory();
@@ -12,7 +13,7 @@ function Navbar() {
     return (
         <div className={`fixed top-0 px-6 sm:px-12 lg:px-14 xl:px-20 py-5 overflow-y-hidden flex items-start md:items-center bg-purple-600 w-full z-10 md:h-24 transform ease-linear duration-300 transition-all max-h-20`}>
             <div className="flex flex-wrap items-center flex-grow">
-                <img onClick={() => history.push('/')} className="rounded-full cursor-pointer transition transform hover:scale-105 hover:bg-opacity-80 border-2 border-night-light-400 mr-2 hidden sm:inline-block  md:w-12 md:h-12 rounded " src={siteLogo} alt="Site Logo" />
+                <img onClick={() => history.push('/')} className="rounded-full cursor-pointer transition transform hover:scale-105 hover:bg-opacity-80 border-2 border-night-light-400 mr-2 hidden sm:inline-block  md:w-12 md:h-12 rounded " src={"https://e7.pngegg.com/pngimages/930/556/png-clipart-shopping-cart-shopping-cart-logo-online-shopping-service-shopping-cart-retail-rectangle-thumbnail.png"} alt="Site Logo" />
                 <div className="md:space-x-5 mt-4  flex flex-col md:flex-row w-full md:w-auto md:inline-block">
                     
                      <div className="text-lg inline-block text-white transform hover:scale-110 hover:bg-opacity-80"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="currentColor">
@@ -35,5 +36,3 @@ function Navbar() {
         </div>
     )
 }
-
-export default Navbar;

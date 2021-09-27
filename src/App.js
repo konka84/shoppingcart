@@ -1,11 +1,10 @@
-import Home from "./components/Home";
+import Browser from "./navigate/browser";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <Home />
+      <Browser />
     </div>
   );
 }
 
-export default App;

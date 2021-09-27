@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { ModalContext, ShopContext} from "../../contexts/ShoppingContext";
-import ProdCardSidebar from "../productCards/ProdCardSidebar";
+import ProdCardSidebar from "../cards/ProdCardSidebar";
 
 
-function SideBar() {
+export default function SideBar() {
     const {cartProducts, setCartProducts} = useContext(ShopContext);
     const { cartVisible, setCartVisible } = useContext(ModalContext);
     const history = useHistory();
@@ -38,5 +38,3 @@ function SideBar() {
         </React.Fragment>
     );
 }
-
-export default SideBar;
