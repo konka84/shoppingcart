@@ -1,10 +1,12 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ShopContext } from "../../contexts/ShoppingContext";
 import ProdCard from "../cards/ProdCard";
 
 
 
 export default function Products() {
     const allProducts = JSON.parse(localStorage.getItem("Products"));
+    const {cartProducts} = useContext(ShopContext); //eslint-disable-linegit
     const categories = JSON.parse(localStorage.getItem("Categories"));
     const [selectedCategory, setSelectedCategory] = useState("All Products");
     const [searchText, setSearchText] = useState("");
