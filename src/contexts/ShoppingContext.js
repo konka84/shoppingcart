@@ -12,8 +12,9 @@ export default function ShoppingContext({ children }) {
     
     function setAllProducts ()  {
         if (!localStorage.getItem("Products")) {
-            axiosData.then(setCartProducts({}))
-            
+            //axiosData.then(setCartProducts({}))
+            axiosData();
+           
         }
     }
     return (

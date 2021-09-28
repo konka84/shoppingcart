@@ -7,7 +7,7 @@ import CheckoutPage from "../components/checkout/CheckoutPage";
 import About from "../components/about/About";
 import Success from "../components/success/Success";
 import NotFound from "../components/notfound/NotFound";
-
+import Contact from "../components/contact/Contact";
 
 export default function Apiroutes(){
     return(
@@ -31,6 +31,12 @@ export default function Apiroutes(){
                     <Route path="/about/" >
                         <Navbar />
                         <About/>
+                        
+                    </Route>
+                    <Route path="/contacts/" >
+                        <Navbar />
+                        <Contact/>
+                        
                     </Route>
                     <Route path="*" >
                         <Navbar />
