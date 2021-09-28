@@ -6,7 +6,7 @@ import ProdCard from "../cards/ProdCard";
 
 export default function Products() {
     const allProducts = JSON.parse(localStorage.getItem("Products"));
-    const {cartProducts} = useContext(ShopContext); //eslint-disable-linegit
+    const {cartProducts} = useContext(ShopContext); //eslint-disable-line
     const categories = JSON.parse(localStorage.getItem("Categories"));
     const [selectedCategory, setSelectedCategory] = useState("All Products");
     const [searchText, setSearchText] = useState("");
