@@ -8,6 +8,8 @@ const axiosData = axios.get("https://fakestoreapi.com/products")
     const categories = getCategories(allProducts)
     localStorage.setItem("Products", JSON.stringify(allProducts));
     localStorage.setItem("Categories", JSON.stringify(categories)); 
+    console.log(allProducts)
+    return response.data
 })
 .catch(error=>{
     alert(error.stack);

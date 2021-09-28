@@ -14,7 +14,7 @@ export default function ProdCardSidebar({ product: { id, title, image, price, ra
                 </div>
                 <div className="w-3/5 flex flex-wrap flex-grow space-y-1">
                     <h4 className=" w-full text-center rounded-md font-semibold text-black-500">{title}</h4>
-                    <h6 className="w-1/2 text-base font-semibold"><i className="fa fa-dollar pr-1"></i> {price}</h6>
+                    <h6 className="w-1/2 text-base font-semibold"><i className="fa fa-dollar pr-1"></i> {cartProducts[id].count*price}</h6>
                     <h6 className="w-1/2 text-right text-base font-semibold">{rate} <i className="fa fa-star pl-1"></i></h6>
                 </div>
             </div>

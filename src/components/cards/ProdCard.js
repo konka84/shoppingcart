@@ -25,13 +25,13 @@ export default function ProdCard({ product: { id, image, title, category, price,
                         <div className>
                              <button onClick={() => setCartProducts({...cartProducts, [id]: {...cartProducts[id],count: (cartProducts[id].count+1)}})} 
                             className="bg-purple-400 transition transform hover:scale-110 px-3 py-1 rounded-full" >
-                               <i className="fa fa-plus  text-xl"></i>
+                               <i className="fa fa-caret-up  text-xl"></i>
                             </button>
                             <h3 className="bg-purple-400 m-1  rounded-lg font-semibold text-xl" >{cartProducts[id].count}</h3>
                            
                             <button onClick={() => setCartProducts({...cartProducts, [id]: {...cartProducts[id],count: Math.max(0,cartProducts[id].count-1)}})}
                               className="bg-purple-400 transition transform hover:scale-110 px-3 py-1 rounded-full" >
-                                 <i className="fa fa-minus text-xl"></i>
+                                 <i className="fa fa-caret-down text-xl " ></i>
                             </button>
                            
                     

@@ -10,10 +10,10 @@ export default function ShoppingContext({ children }) {
 
     useEffect(setAllProducts, [])
     
-    function setAllProducts() {
-        if ((!localStorage.getItem("Products"))||(!localStorage.getItem("Categories"))) {
-            axiosData()
-            setCartProducts({})
+    function setAllProducts ()  {
+        if (!localStorage.getItem("Products")) {
+            axiosData.then(setCartProducts({}))
+            
         }
     }
     return (
