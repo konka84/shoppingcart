@@ -12,7 +12,7 @@ export default function ShoppingContext({ children }) {
     
     function setAllProducts ()  {
         if (!localStorage.getItem("Products")) {
-            datafetch(setCartProducts)
+            datafetch();
            
         }
     }
