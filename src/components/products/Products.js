@@ -10,15 +10,17 @@ import getCategories from "../../api/categories"
 
 
 export default function Products() {
+    const allProducts = JSON.parse(localStorage.getItem("Products"));
     const {cartProducts} = useContext(ShopContext); //eslint-disable-line
     const categories = JSON.parse(localStorage.getItem("Categories"));
     const [selectedCategory, setSelectedCategory] = useState("All Products");
     const [searchText, setSearchText] = useState("");
+    const [isItemsLoaded, setIsItemLoaded] = useState(false)
 
     useEffect(() => {
         function fetch(){
             console.log("here")
-        if(!localStorage.getItem("Products"))
+        if(localStorage.getItem("Products")===null)
         {
             axios.get("https://fakestoreapi.com/products")
             .then((response) => {
@@ -26,21 +28,24 @@ export default function Products() {
                 const categories = getCategories(allProducts)
                 localStorage.setItem("Products", JSON.stringify(allProducts));
                 localStorage.setItem("Categories", JSON.stringify(categories)); 
+                setIsItemLoaded(true);
                // console.log(allProducts)
             })
             .catch(error=>{
                 alert(error.stack);
             })
          }
+         else{
+             setIsItemLoaded(true)
+         }
         }
         fetch()
 
       });
 
-      const allProducts = JSON.parse(localStorage.getItem("Products"));
-      console.log(allProducts)
 
-    return (localStorage.getItem("Products")) ? (
+
+    return ((localStorage.getItem("Products") || isItemsLoaded)) ? (
         <div>
             <Navbar/>
         <div className="pt-24 bg-gradient-to-br bg-opacity-10 from-gray-1000 to-gray-500 px-12 sm:px-28 md:px-8 lg:px-16 xl:px-32">
