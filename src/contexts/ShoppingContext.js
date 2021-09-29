@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react"
-import datafetch from "../api/datafetch";
+import React, { useState } from "react"
 
 export const ShopContext = React.createContext();
 export const ModalContext = React.createContext();
@@ -8,14 +7,14 @@ export default function ShoppingContext({ children }) {
     const [cartProducts, setCartProducts] = useState({});
     const [cartVisible, setCartVisible] = useState(false);
 
-    useEffect(setAllProducts, [])
+    // useEffect(setAllProducts, [])
     
-    function setAllProducts ()  {
-        if (!localStorage.getItem("Products")) {
-            datafetch();
+    // function setAllProducts ()  {
+    //     if (!localStorage.getItem("Products")) {
+    //         datafetch();
            
-        }
-    }
+    //     }
+    // }
     return (
         <ShopContext.Provider value={{ cartProducts, setCartProducts}}>
              <ModalContext.Provider value={{ cartVisible, setCartVisible }} >

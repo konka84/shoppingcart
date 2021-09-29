@@ -1,4 +1,5 @@
-import { useContext, useState } from "react"
+import { useContext, useState ,useEffect} from "react"
+import datafetch from "../../api/datafetch";
 import { ShopContext } from "../../contexts/ShoppingContext";
 import ProductCard from "../cards/ProductCard";
 import Navbar from "../navbar/Navbar";
@@ -13,6 +14,12 @@ export default function Products() {
     const categories = JSON.parse(localStorage.getItem("Categories"));
     const [selectedCategory, setSelectedCategory] = useState("All Products");
     const [searchText, setSearchText] = useState("");
+
+    useEffect(() => {
+        if(!localStorage.getItem("Products"))
+            datafetch()
+
+      });
 
     return (allProducts) ? (
         <div>
@@ -72,7 +79,6 @@ export default function Products() {
         <SideBar/>
         </div>
     ) : (                                                            
-         window.location.reload(),
         <div className='h-screen flex bg-gradient-to-r from-purple-100 to-purple-500'>
             <div className='m-auto my-80 '>
                 <div className='flex items-center justify-center '>
