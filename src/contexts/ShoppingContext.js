@@ -18,9 +18,9 @@ export default function ShoppingContext({ children }) {
     }
     return (
         <ShopContext.Provider value={{ cartProducts, setCartProducts}}>
-            <ModalContext.Provider value={{ cartVisible, setCartVisible }} >
+             <ModalContext.Provider value={{ cartVisible, setCartVisible }} >
                 {children}
-            </ModalContext.Provider>
+            </ModalContext.Provider> 
         </ShopContext.Provider>
     )
 }

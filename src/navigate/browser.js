@@ -1,13 +1,13 @@
 import React from "react";
 import ShoppingContext from "../contexts/ShoppingContext";
-import Apiroutes from "./apiroutes";
+import Routing from "./router";
 
 
 
 export default function Browser() {
     return (
         <ShoppingContext>
-            <Apiroutes/>
+            <Routing/>
         </ShoppingContext>
     )
 }

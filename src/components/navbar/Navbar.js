@@ -13,8 +13,10 @@ const history = useHistory();
 
 const siteLogo = "https://e7.pngegg.com/pngimages/930/556/png-clipart-shopping-cart-shopping-cart-logo-online-shopping-service-shopping-cart-retail-rectangle.png";
 return (
-    <div className={`px-6 sm:px-12 lg:px-14 xl:px-20 py-5 overflow-y-hidden flex items-start md:items-center bg-purple-400   fixed top-0 w-full z-10 md:h-24 transform ease-linear duration-300 transition-all ${isHamMenuOpen ? "max-h-60" : "max-h-28"}`}>
+    <div className={`px-6 sm:px-12 lg:px-14 xl:px-20 py-5 overflow-y-hidden flex items-start md:items-center bg-purple-400   fixed top-0 w-full z-10 md:h-24 transform ease-linear duration-300 transition-all ${isHamMenuOpen ? "max-h-60" : "max-h-16"}`}>
         <div className="flex flex-wrap items-center flex-grow">
+            <div className="flex flex-row"> 
+
             <div className="md:hidden mr-5 transition transform hover:scale-105 hover:bg-opacity-80 text-night-light-100 bg-night-dark-100 p-2 rounded-lg" onClick={() => setIsHamMenuOpen(!isHamMenuOpen)}>
                 {
                     isHamMenuOpen ? (
@@ -29,7 +31,10 @@ return (
                 }
             </div>
             <img onClick={() => history.push('/')} className="cursor-pointer  border-2 border-night-light-400 mr-2 hidden sm:inline-block w-11 h-11 md:w-16 md:h-16 rounded-lg md:rounded-2xl" src={siteLogo} alt="Site Logo" />
-            <h2 onClick={() => history.push('/')} className="cursor-pointer text-white font-bold text-3xl font-serif  mr-8">ShoPoholic</h2>
+            <div>
+            <h2 onClick={() => history.push('/')} className="mt-2 sm:mt-4 cursor-pointer text-white font-bold text-xl sm:text-3xl font-serif  mr-8">ShoPoholic</h2>
+            </div>
+            </div>
             <div className="md:space-x-5 mt-4 items-start flex flex-col md:flex-row w-full md:w-auto md:inline-block">
                 <div className="text-lg inline-block font-semibold my-1 text-night-light-100 bg-purple-100 text-black px-2 rounded-md transition transform hover:scale-110 hover:bg-opacity-80"><Link to="/">Home</Link></div>
                 <div className="text-lg inline-block font-semibold my-1 text-night-light-100 bg-purple-100 px-2 rounded-md transition transform hover:scale-110 hover:bg-opacity-80"><Link to="/about/">About</Link></div>
