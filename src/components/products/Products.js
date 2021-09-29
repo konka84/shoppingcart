@@ -14,7 +14,7 @@ export default function Products() {
     const [selectedCategory, setSelectedCategory] = useState("All Products");
     const [searchText, setSearchText] = useState("");
 
-    return (!allProducts) ? (
+    return (allProducts) ? (
         <div>
             <Navbar/>
         <div className="pt-24 bg-gradient-to-br bg-opacity-10 from-gray-1000 to-gray-500 px-12 sm:px-28 md:px-8 lg:px-16 xl:px-32">
