@@ -1,27 +1,46 @@
 import { useContext, useState ,useEffect} from "react"
-import datafetch from "../../api/datafetch";
 import { ShopContext } from "../../contexts/ShoppingContext";
 import ProductCard from "../cards/ProductCard";
 import Navbar from "../navbar/Navbar";
 import SideBar from "../sidebar/SideBar";
+import axios from "axios"
+import getCategories from "../../api/categories"
 
 
 
 
 export default function Products() {
-    const allProducts = JSON.parse(localStorage.getItem("Products"));
     const {cartProducts} = useContext(ShopContext); //eslint-disable-line
     const categories = JSON.parse(localStorage.getItem("Categories"));
     const [selectedCategory, setSelectedCategory] = useState("All Products");
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
+        function fetch(){
+            console.log("here")
         if(!localStorage.getItem("Products"))
-            datafetch()
+        {
+            axios.get("https://fakestoreapi.com/products")
+            .then((response) => {
+                const allProducts = response.data;
+                const categories = getCategories(allProducts)
+                localStorage.setItem("Products", JSON.stringify(allProducts));
+                localStorage.setItem("Categories", JSON.stringify(categories)); 
+               // console.log(allProducts)
+            })
+            .catch(error=>{
+                alert(error.stack);
+            })
+         }
+        }
+        fetch()
 
       });
 
-    return (allProducts) ? (
+      const allProducts = JSON.parse(localStorage.getItem("Products"));
+      console.log(allProducts)
+
+    return (localStorage.getItem("Products")) ? (
         <div>
             <Navbar/>
         <div className="pt-24 bg-gradient-to-br bg-opacity-10 from-gray-1000 to-gray-500 px-12 sm:px-28 md:px-8 lg:px-16 xl:px-32">
