@@ -41,11 +41,11 @@ return (
                 <div className="text-lg inline-block font-semibold my-1 text-night-light-100 bg-purple-100 px-2 rounded-md transition transform hover:scale-110 hover:bg-opacity-80"><Link to="/contacts/">Contacts</Link></div>
             </div>
         </div>
-        <button onClick={() => setCartVisible(true)} className="transition transform hover:scale-110 hover:bg-opacity-80 text-3xl mx-2 my-1 text-white text-night-light-100 px-2 relative rounded-lg justify-self-end" >
+        <button onClick={() => setCartVisible(true)} className="transition transform hover:scale-110 hover:bg-opacity-80 text-3xl mx-0 my-1 text-white text-night-light-100 px-2 relative rounded-lg justify-self-end" >
             <i className="fa fa-shopping-cart"></i>
             {
                 Object.keys(cartProducts).length ? (
-                    <p className="absolute -right-3 -top-3 text-base rounded-full px-2 bg-black text-neon1-light-300 font-semibold">{Object.values(cartProducts).reduce((totalSelected, product) => totalSelected + product.count, 0)}</p>
+                    <p className="absolute -right-3 -top-3 text-base rounded-full mx-3 px-1 bg-black text-neon1-light-300 font-semibold">{Object.values(cartProducts).reduce((totalSelected, product) => totalSelected + product.count, 0)}</p>
                 ) : ""
             }
         </button>
