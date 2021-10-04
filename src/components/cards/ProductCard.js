@@ -12,7 +12,7 @@ export default function ProductCard({ product: { id, image, title, category, pri
             <div className="relative w-full pb-110p">
                 <img className="absolute w-full h-full rounded-xl" src={image} alt="product" />
             </div>
-            <h4 className=" w-screen bg-purple-100 px-2 rounded-lg font-semibold sm:h-36  sm:w-full">{title}</h4> 
+            <h4 className=" w-screen bg-purple-200 px-2 rounded-lg font-semibold sm:h-36  sm:w-full">{title}</h4> 
             <div className="flex-grow">
                 <h6 className="text-base font-extrabold"><i className="fa fa-dollar pr-1"></i> {price}</h6>
             </div>
