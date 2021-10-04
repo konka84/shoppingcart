@@ -49,7 +49,7 @@ export default function Products() {
         <div>
             <Navbar/>
         <div className="pt-24 bg-gradient-to-br bg-opacity-10 from-gray-1000 to-gray-500 px-12 sm:px-28 md:px-8 lg:px-16 xl:px-32">
-            <div className="flex-wrap flex justify-between w-full px-10 my-2 md:space-y-0 space-y-2">
+            <div className="flex-wrap flex justify-between w-full px-0 my-2 md:space-y-0 space-y-2">
                 <div className="w-screen inline-block relative 2xl:w-2/5 xl:w-2/5 md:w-2/5 sm:w-full transition transform hover:scale-105 px-2">
 
                     <select
